@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">MusicAppXml</string>
+    <string name="albumName">Damn</string>
+    <string name="nameMusic">Humble</string>
+    <string name="duration">3:04</string>
+    <string name="artist">Kendrick Lamar</string>
+    <string name="actual">0:45</string>
+</resources>
