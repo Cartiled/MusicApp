@@ -5,7 +5,6 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#3A0F0707"
     tools:context=".MainActivity">
 
     <TextView
@@ -16,18 +15,22 @@
         android:textSize="18sp"
         app:layout_constraintBottom_toTopOf="@+id/artistName"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/albumView" />
+        app:layout_constraintStart_toEndOf="@+id/albumView"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
         android:id="@+id/albumView"
-        android:layout_width="272dp"
-        android:layout_height="295dp"
-        app:layout_constraintBottom_toTopOf="@+id/SongNameView"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_width="313dp"
+        android:layout_height="210dp"
+        android:contentDescription="TODO"
+        app:layout_constraintBottom_toTopOf="@+id/shareButton"
+        app:layout_constraintEnd_toStartOf="@+id/artistName"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/albumName"
-        app:srcCompat="@drawable/_1mwie1bzwl__uf894_1000_ql80_" />
+        app:layout_constraintVertical_bias="0.527"
+        app:srcCompat="@drawable/_1mwie1bzwl__uf894_1000_ql80_"
+        tools:ignore="ContentDescription,HardcodedText" />
 
     <TextView
         android:id="@+id/albumName"
@@ -37,11 +40,11 @@
         android:gravity="center"
         android:text="@string/albumName"
         android:textSize="30sp"
-        app:layout_constraintBottom_toTopOf="@+id/albumView"
+        app:layout_constraintBottom_toTopOf="@+id/SongNameView"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_chainStyle="packed" />
+        tools:ignore="TextSizeCheck" />
 
     <TextView
         android:id="@+id/artistName"
@@ -51,7 +54,8 @@
         android:textSize="18sp"
         app:layout_constraintBottom_toTopOf="@+id/timeBar"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/albumView"
         app:layout_constraintTop_toBottomOf="@+id/SongNameView" />
 
     <ProgressBar
@@ -59,9 +63,10 @@
         style="?android:attr/progressBarStyleHorizontal"
         android:layout_width="269dp"
         android:layout_height="21dp"
-        app:layout_constraintBottom_toTopOf="@+id/loopButton"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/playButton"
+        app:layout_constraintEnd_toStartOf="@+id/loopButton"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/randomButton"
         app:layout_constraintTop_toBottomOf="@+id/durationText"
         tools:progress="25" />
 
@@ -74,7 +79,8 @@
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/previousButton"
         app:layout_constraintTop_toBottomOf="@+id/timeBar"
-        app:srcCompat="@drawable/pngwing_com__3_" />
+        app:srcCompat="@drawable/pngwing_com__3_"
+        tools:ignore="ContentDescription" />
 
     <ImageView
         android:id="@+id/nextButton"
@@ -85,7 +91,8 @@
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/playButton"
         app:layout_constraintTop_toBottomOf="@+id/timeBar"
-        app:srcCompat="@drawable/pngwing_com__4_" />
+        app:srcCompat="@drawable/pngwing_com__4_"
+        tools:ignore="ContentDescription" />
 
     <ImageView
         android:id="@+id/previousButton"
@@ -96,17 +103,18 @@
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/randomButton"
         app:layout_constraintTop_toBottomOf="@+id/timeBar"
-        app:srcCompat="@drawable/pngwing_com__5_" />
+        app:srcCompat="@drawable/pngwing_com__5_"
+        tools:ignore="ContentDescription" />
 
     <ProgressBar
         android:id="@+id/soundBar"
         style="?android:attr/progressBarStyleHorizontal"
         android:layout_width="268dp"
         android:layout_height="22dp"
-        app:layout_constraintBottom_toTopOf="@+id/favouritButton"
+        app:layout_constraintBottom_toTopOf="@+id/listButton"
         app:layout_constraintEnd_toStartOf="@+id/volumeIcon"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/playButton"
+        app:layout_constraintStart_toEndOf="@+id/albumView"
+        app:layout_constraintTop_toBottomOf="@+id/randomButton"
         tools:progress="70" />
 
     <ImageView
@@ -116,9 +124,9 @@
         app:layout_constraintBottom_toTopOf="@+id/listButton"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/soundBar"
-        app:layout_constraintTop_toBottomOf="@+id/loopButton"
-        app:layout_constraintVertical_bias="0.378"
-        app:srcCompat="@drawable/pngwing_com__7_" />
+        app:layout_constraintTop_toBottomOf="@+id/playButton"
+        app:srcCompat="@drawable/pngwing_com__7_"
+        tools:ignore="ContentDescription" />
 
     <TextView
         android:id="@+id/durationText"
@@ -126,7 +134,7 @@
         android:layout_height="wrap_content"
         android:text="@string/duration"
         app:layout_constraintBottom_toTopOf="@+id/timeBar"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/loopButton"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/timeNowText"
         app:layout_constraintTop_toBottomOf="@+id/artistName" />
@@ -139,31 +147,33 @@
         app:layout_constraintBottom_toTopOf="@+id/timeBar"
         app:layout_constraintEnd_toStartOf="@+id/durationText"
         app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/artistName"
-        app:layout_constraintVertical_bias="0.47" />
+        app:layout_constraintStart_toEndOf="@+id/randomButton"
+        app:layout_constraintTop_toBottomOf="@+id/artistName" />
 
     <ImageView
         android:id="@+id/randomButton"
         android:layout_width="36dp"
         android:layout_height="40dp"
-        app:layout_constraintBottom_toTopOf="@+id/soundBar"
-        app:layout_constraintEnd_toStartOf="@+id/previousButton"
+        app:layout_constraintBottom_toBottomOf="@+id/favouritButton"
+        app:layout_constraintEnd_toStartOf="@+id/timeBar"
         app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/timeBar"
-        app:srcCompat="@drawable/pngwing_com__8_" />
+        app:layout_constraintStart_toEndOf="@+id/albumView"
+        app:layout_constraintTop_toBottomOf="@+id/artistName"
+        app:srcCompat="@drawable/pngwing_com__8_"
+        tools:ignore="ContentDescription" />
 
     <ImageView
         android:id="@+id/loopButton"
         android:layout_width="51dp"
         android:layout_height="46dp"
-        app:layout_constraintBottom_toTopOf="@+id/soundBar"
+        android:contentDescription="TODO"
+        app:layout_constraintBottom_toBottomOf="@+id/listButton"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/nextButton"
-        app:layout_constraintTop_toBottomOf="@+id/timeBar"
-        app:srcCompat="@drawable/pngwing_com__9_" />
+        app:layout_constraintStart_toEndOf="@+id/timeBar"
+        app:layout_constraintTop_toBottomOf="@+id/artistName"
+        app:srcCompat="@drawable/pngwing_com__9_"
+        tools:ignore="ContentDescription,HardcodedText" />
 
     <ImageView
         android:id="@+id/favouritButton"
@@ -174,7 +184,8 @@
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/shareButton"
         app:layout_constraintTop_toBottomOf="@+id/soundBar"
-        app:srcCompat="@drawable/pngwing_com" />
+        app:srcCompat="@drawable/pngwing_com"
+        tools:ignore="ContentDescription" />
 
     <ImageView
         android:id="@+id/shareButton"
@@ -185,7 +196,8 @@
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/soundBar"
-        app:srcCompat="@drawable/share" />
+        app:srcCompat="@drawable/share"
+        tools:ignore="ContentDescription" />
 
     <ImageView
         android:id="@+id/listButton"
@@ -196,6 +208,7 @@
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/favouritButton"
         app:layout_constraintTop_toBottomOf="@+id/soundBar"
-        app:srcCompat="@drawable/_916404_200" />
+        app:srcCompat="@drawable/_916404_200"
+        tools:ignore="ContentDescription" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
